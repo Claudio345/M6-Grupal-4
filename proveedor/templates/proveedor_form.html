@@ -1,0 +1,33 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+  <form action="{% url 'proveedor:formulario' %}" method="post">
+      {% csrf_token %}
+      <div class="mb-3">
+        <label for="id_nombre" class="form-label">Nombre del proveedor</label>
+        {{ form.nombre}}
+      </div>
+    
+      <div class="mb-3">
+        <label for="id_image" class="form-label">logo del proveedor</label>
+        {{ form.image}}
+      </div>
+    
+      <div class="mb-3">
+        <label for="id_descuento" class="form-label">Descuento cada 100 Unidades(Porcentaje)</label>
+        {{ form.descuento}}
+      </div>
+    
+      <div class="mb-3">
+        <label for="id_demora" class="form-label">Plazo de Entrega (dias)</label>
+        {{ form.demora}}
+      </div>
+    
+      <div class="mb-3">
+        <label for="id_categoria" class="form-label">Categoria</label>
+        {{ form.categoria}}
+      </div>
+
+      <button type="submit" class="btn btn-success">Agregar Proveedor</button>
+  </form>
+{% endblock %}

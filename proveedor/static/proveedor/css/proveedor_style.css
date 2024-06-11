@@ -1,0 +1,32 @@
+.proveedor-detalle-container {
+  display: flex;
+ 
+  margin-top: 5rem;
+}
+
+.proveedor-imagen {
+  flex: 1 0 50%;
+  padding: 10px;
+  text-align: center;
+}
+
+.proveedor-imagen img {
+  max-width: 100%;
+  height: auto;
+}
+
+.proveedor-info {
+ flex: 1 0 50%;
+ padding: 20px;
+}
+
+.proveedor-info h2 {
+  color: #333;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+ }
+
+ .proveedorinfo p {
+  font-size: 1.2rem;
+  color: #555;
+ }

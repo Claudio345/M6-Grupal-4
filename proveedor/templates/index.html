@@ -1,0 +1,39 @@
+{% extends 'layout.html'%}
+{% block content %}
+<h1>Lista de Proveedores</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Logo</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Descuento(Porcentaje)</th>
+      <th scope="col">Plazo de Entrega (dias) </th>
+      <th scope="col">Categoria </th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for proveedor in proveedores %}
+
+    <tr>
+      <td>{{proveedor.id}}</td>
+      <td>
+        <a href="{% url 'proveedor:detail' proveedor.id %}">
+          <img src="{{ proveedor.image}}" alt="" width="50">
+        </a>
+      </td>
+      <td>{{ proveedor.nombre }}</td>
+      <td>{{ proveedor.descuento}}</td>
+      <td>{{ proveedor.demora}}</td>
+      <td>{{ proveedor.categoria}}</td>
+    </tr>
+
+    {% endfor %}
+
+
+  </tbody>
+</table>
+
+<a href="{% url 'proveedor:formulario' %}" class="btn btn-success">Agregar a un Proveedor</a>
+{% endblock %}

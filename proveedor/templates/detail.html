@@ -1,0 +1,22 @@
+{% extends 'layout.html'%}
+{% load static %}
+
+{% block extra_css %}
+<link href="{% static 'proveedor/css/proveedor_style.css' %}" rel="stylesheet" /> 
+{% endblock %}
+
+{% block content %}
+
+<div class="proveedor-detalle-container">
+  <div class="proveedor-imagen">
+    <img src="{{ proveedor.image }}" alt="{{proveedor.nombre}}">
+  </div>
+  <div class="proveedor-info">
+    <h2>{{proveedor.nombre}}</h2>
+    <p><strong>descuento(Porcentaje): </strong>{{proveedor.descuento}}</p>
+    <p><strong>Tiempo de entrega(dias): </strong>{{proveedor.demora}}</p>
+    <p><strong>Categoría: </strong>{{proveedor.categoria.nombre}}</p>
+    <p><strong>Creado: </strong>{{proveedor.create_at}}</p>
+  </div>
+</div>
+{% endblock %}
